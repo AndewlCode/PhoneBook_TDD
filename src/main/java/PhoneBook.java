@@ -1,6 +1,10 @@
+import java.util.HashMap;
+
 public class PhoneBook {
-    public String add(String name, String number) {
-        return "0";
+    HashMap<String, String> contacts = new HashMap<>();
+
+    public void add(String name, String number) {
+        contacts.put(name, number);
     }
 
 }
