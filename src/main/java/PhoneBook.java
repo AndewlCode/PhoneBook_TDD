@@ -1,6 +1,7 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class PhoneBook {
     HashMap<String, String> contacts = new HashMap<>();
@@ -27,6 +28,8 @@ public class PhoneBook {
     }
 
     public String printAllNames() {
-        return null;
+        List<String> result = new ArrayList<>(contacts.keySet());
+        return result.stream().sorted().map(Object::toString)
+                .collect(Collectors.joining(" "));
     }
 }
