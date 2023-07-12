@@ -6,7 +6,12 @@ public class PhoneBook {
     public void add(String name, String number) {
         contacts.put(name, number);
     }
-    public String findByNumber(String number){
-        return null;
+    public String findByNumber(String number) {
+        for (String key : contacts.keySet()){
+            if (contacts.get(key).equals(number)){
+                return key;
+            }
+        }
+        return "Контакт не найден";
     }
 }
