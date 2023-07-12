@@ -53,4 +53,33 @@ public class PhoneBookTest {
         String userName = phoneBook.findByNumber("9091235555");
         Assertions.assertEquals("Сергей",userName);
     }
+
+    @org.junit.jupiter.api.Test
+    public void testPhonebookFindByName1() {
+        // given:
+        PhoneBook phoneBook = new PhoneBook();
+
+        // when:
+        phoneBook.add("Иван", "9091234545");
+        phoneBook.add("Сергей", "9091235555");
+
+        // then:
+        String phoneNumber = phoneBook.findByName("Иван");
+        Assertions.assertEquals("9091234545",phoneNumber);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testPhonebookFindByName2() {
+        // given:
+        PhoneBook phoneBook = new PhoneBook();
+
+        // when:
+        phoneBook.add("Иван", "9091234545");
+        phoneBook.add("Сергей", "9091235555");
+
+        // then:
+        String phoneNumber = phoneBook.findByName("Василий");
+        Assertions.assertEquals("Контакт не найден",phoneNumber);
+    }
+
 }
