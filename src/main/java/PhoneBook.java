@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class PhoneBook {
@@ -22,5 +24,9 @@ public class PhoneBook {
         } else {
             return "Контакт не найден";
         }
+    }
+
+    public String printAllNames() {
+        return null;
     }
 }

@@ -11,7 +11,7 @@ public class PhoneBookTest {
 
         // then:
         String username = phoneBook.findByNumber("9091234545");
-        Assertions.assertEquals("Иван",username);
+        Assertions.assertEquals("Иван", username);
     }
 
     @org.junit.jupiter.api.Test
@@ -24,7 +24,7 @@ public class PhoneBookTest {
 
         // then:
         String phoneNumber = phoneBook.contacts.get("Иван");
-        Assertions.assertEquals("9091234545",phoneNumber);
+        Assertions.assertEquals("9091234545", phoneNumber);
     }
 
     @org.junit.jupiter.api.Test
@@ -37,7 +37,7 @@ public class PhoneBookTest {
 
         // then:
         String userName = phoneBook.findByNumber("9091234545");
-        Assertions.assertEquals("Иван",userName);
+        Assertions.assertEquals("Иван", userName);
     }
 
     @org.junit.jupiter.api.Test
@@ -51,7 +51,7 @@ public class PhoneBookTest {
 
         // then:
         String userName = phoneBook.findByNumber("9091235555");
-        Assertions.assertEquals("Сергей",userName);
+        Assertions.assertEquals("Сергей", userName);
     }
 
     @org.junit.jupiter.api.Test
@@ -65,7 +65,7 @@ public class PhoneBookTest {
 
         // then:
         String phoneNumber = phoneBook.findByName("Иван");
-        Assertions.assertEquals("9091234545",phoneNumber);
+        Assertions.assertEquals("9091234545", phoneNumber);
     }
 
     @org.junit.jupiter.api.Test
@@ -79,7 +79,33 @@ public class PhoneBookTest {
 
         // then:
         String phoneNumber = phoneBook.findByName("Василий");
-        Assertions.assertEquals("Контакт не найден",phoneNumber);
+        Assertions.assertEquals("Контакт не найден", phoneNumber);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testPrintAllNames1() {
+        // given:
+        PhoneBook phoneBook = new PhoneBook();
+
+        // when:
+        phoneBook.add("Иван", "9091234545");
+        phoneBook.add("Сергей", "9091235555");
+
+        // then:
+        String allNames = phoneBook.printAllNames();
+        Assertions.assertEquals("Иван Сергей", allNames);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testPrintAllNames2() {
+        // given:
+        PhoneBook phoneBook = new PhoneBook();
+
+        // when:
+
+        // then:
+        String allNames = phoneBook.printAllNames();
+        Assertions.assertEquals("", allNames);
     }
 
 }
